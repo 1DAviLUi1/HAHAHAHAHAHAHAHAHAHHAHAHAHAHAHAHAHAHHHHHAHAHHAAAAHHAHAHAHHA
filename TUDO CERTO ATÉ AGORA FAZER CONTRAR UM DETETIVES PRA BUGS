@@ -1,7 +1,7 @@
 //xD
 #include <stdio.h>
 #include <stdlib.h>
-    float preco = 0, saldo = 0, receita = 0, despesas = 0;
+    float tottal = 0, preco = 0, saldo = 0, receita = 0, despesas = 0;
     char produto[100];
     int qadprod = 0, produtocad = 0;
     void luna(){
@@ -56,7 +56,7 @@
                         break;
                         case '2':
                             printf(" Controle de vendas p-p\n");
-                            printf(" 0 - Limpar Buffer\n 1 - Colocar preco\n 2 - Vender\n 3 - Voltar ao menu principal\n");
+                            printf(" 0 - Limpar Buffer\n 1 - Colocar preco\n 2 - Vender\n 3 - Vendas realizadas\n 4 - Voltar ao menu principal\n");
                             scanf(" %c", &cdv);
                             if (cdv == '0'){
                                 luna();
@@ -151,6 +151,7 @@
                                 troco1 = troco - resultado;
                                 printf(" Entregue: %.2fR$ de troco para o cliente\nFeito!!11!!!11!!\n", troco1);
                                 saldo = resultado + saldo;
+                                tottal = resultado;
                                 glitter();
                             }
                             else if(fmdp == 2){
@@ -194,17 +195,15 @@
                     else if(cf == '1'){
                         printf(" Digite suas despesas\n");
                         scanf(" %f", &despesas);
-                        continue;
                     }
                     else if(cf == '2'){
                         printf(" Digite sua receita\n");
                         scanf(" %f", &receita);
-                        continue;
                     }
                     else if(cf == '3'){
                         saldo2 = receita - despesas;
                         printf(" Seu saldo eh: R$%.2f\n", saldo2 + saldo);
-                        continue;
+                        break;
                     }
                     else if(cf == '4'){
                         glitter();
