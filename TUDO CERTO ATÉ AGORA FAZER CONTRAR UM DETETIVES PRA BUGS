@@ -15,13 +15,13 @@
         float  resultado, resultado2, escpod2, troco, troco1, saldo2;
         char comando, cde, cdv, cf;
         int  escpod, fmdp, cartaopassou;
-        printf(" Menu Principal:\n 0 - Limpar Buffer\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\nDigite: ");
+        printf(" Menu Principal:\n 0 - Limpar Buffer\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n ");
         scanf(" %c", &comando);
                 while (1) {
                     switch (comando){
                         case '0':
                             luna();
-                            break;
+                            glitter();
                         case '1':
                             printf(" Controle de estoque o.O:\n");
                             printf(" 0 - Limpar Buffer\n 1 - Cadastrar um produto\n 2 - Visualizar produtos\n 3 - Voltar ao menu principal\n");
@@ -50,9 +50,14 @@
                                 else {}
                                 continue;
                     }
-                               else if (cde == '3') {
+                                else if (cde == '3') {
                                     glitter();
                     }
+                                else{
+                                    luna();
+                                    printf(" :/ comando invalido\n");
+                                    continue;
+                                }
                         break;
                         case '2':
                             printf(" Controle de vendas p-p\n");
@@ -123,9 +128,8 @@
                         else{
                             break;
                         }
-                        while(1){
                             printf(" Selecione a forma de pagamento:\n");
-                            printf(" 1 - dinheiro\n2 - cartao\n3 - Cancelar compra\n");
+                            printf(" 1 - dinheiro\n 2 - cartao\n 3 - Cancelar compra\n");
                             scanf(" %d", &fmdp);
                             if(fmdp == 1){
                                 if(resultado >=100){
@@ -140,7 +144,7 @@
                                     resultado = resultado - resultado2;
                                     printf(" %.2fR$\n", resultado);
                                 }
-                                else if (resultado <=50){
+                                else if (resultado <50){
                                     printf(" Desconto adicionado, valor total ficou de:");
                                     resultado2 = resultado* (5.00/100.00);
                                     resultado = resultado - resultado2;
@@ -168,20 +172,31 @@
                                     case 2:
                                     printf(" :/ Aff\n");
                                     break;
+                                    
+                                    
                                 }
                             }
                             else if(fmdp == 3){
                                 printf(" Compra cancelada :(\n");
-                                glitter();
+                                continue;
                             }
                             else{
-                                printf(" 8/ comando errado");
-                                break;
+                                luna();
+                                printf(" :/ comando invalido\n");
+                                continue;
                             }
+                        
                         }
-                        }
-                    else if (cdv == '3'){
+                    else if(cdv == '3'){
+                        printf("MOSTRAR!!!\N");
+                    }    
+                    else if (cdv == '4'){
                         glitter();
+                    }
+                    else{
+                        luna();
+                        printf(" :/ comando invalido\n");
+                        continue;
                     }
                     break;
                  case '3':
@@ -195,19 +210,27 @@
                     else if(cf == '1'){
                         printf(" Digite suas despesas\n");
                         scanf(" %f", &despesas);
+                        continue;
                     }
                     else if(cf == '2'){
                         printf(" Digite sua receita\n");
                         scanf(" %f", &receita);
+                        continue;
                     }
                     else if(cf == '3'){
                         saldo2 = receita - despesas;
                         printf(" Seu saldo eh: R$%.2f\n", saldo2 + saldo);
-                        break;
+                        continue;
+                        
                     }
                     else if(cf == '4'){
                         glitter();
              }
+                    else{
+                        luna();
+                        printf(" :/ comando invalido\n");
+                        continue;
+                    }
                  case '4':
                  printf(" Tbom entao *-*\n");
                  exit (0);
